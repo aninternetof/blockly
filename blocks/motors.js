@@ -13,7 +13,7 @@ Blockly.Blocks['set_motor'] = {
     this.setInputsInline(true);
     this.setPreviousStatement(true);
     this.setNextStatement(true);
-    this.setColour(330);
+    this.setColour(130);
     this.setTooltip('');
     this.setHelpUrl('http://www.example.com/');
   }

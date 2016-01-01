@@ -315,7 +315,7 @@ Blockly.Css.CONTENT = [
   '}',
 
   '.blocklyFlyoutBackground {',
-  '  fill: #ddd;',
+  '  fill: #fdd;',
   '  fill-opacity: .8;',
   '}',
 
