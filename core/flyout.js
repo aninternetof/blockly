@@ -363,7 +363,8 @@ Blockly.Flyout.prototype.show = function(xmlList) {
   }
   this.buttons_.length = 0;
 
-  var margin = this.CORNER_RADIUS;
+  //var margin = this.CORNER_RADIUS;
+  var margin = 8;
   this.svgGroup_.style.display = 'block';
 
   // Create the blocks to be shown in this flyout.
@@ -465,7 +466,8 @@ Blockly.Flyout.prototype.show = function(xmlList) {
  */
 Blockly.Flyout.prototype.reflow = function() {
   var flyoutWidth = 0;
-  var margin = this.CORNER_RADIUS;
+  //var margin = this.CORNER_RADIUS;
+  var margin = 8;
   var blocks = this.workspace_.getTopBlocks(false);
   for (var x = 0, block; block = blocks[x]; x++) {
     var root = block.getSvgRoot();
