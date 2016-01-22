@@ -1,7 +1,7 @@
-Blockly.Blocks['get_something'] = {
+Blockly.Blocks['pop_event_queue'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("Get Something");
+        .appendField("pop event queue");
     this.setOutput(true, "String");
     this.setColour(230);
     this.setTooltip('');
