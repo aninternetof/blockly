@@ -421,6 +421,44 @@ Blockly.WorkspaceSvg.prototype.traceOn = function(armed) {
 };
 
 /**
+ * Toggle a block's visibility in the workspace.
+ * @param {?string} id ID of block to find.
+ */
+Blockly.WorkspaceSvg.prototype.toggleBlock = function(id) {
+  if (this.traceOn_ && Blockly.dragMode_ != 0) {
+    // The blocklySelectChange event normally prevents this, but sometimes
+    // there is a race condition on fast-executing apps.
+    this.traceOn(false);
+  }
+  if (!this.traceOn_) {
+    return;
+  }
+  var block = null;
+  if (id) {
+    block = this.getBlockById(id);
+    if (!block) {
+      return;
+    }
+  }
+  // Temporary turn off the listener for selection changes, so that we don't
+  // trip the monitor for detecting user activity.
+  this.traceOn(false);
+  // Select the current block.
+  if (block) {
+	if (block.svgGroup_.style.display == 'none')
+	{
+    	block.svgGroup_.style.display = "inline";
+	} else
+	{
+    	block.svgGroup_.style.display = "none";
+	}
+  }
+  // Restore the monitor for user activity after the selection event has fired.
+  var thisWorkspace = this;
+  setTimeout(function() {thisWorkspace.traceOn(true);}, 1);
+};
+
+/**
  * Highlight a block in the workspace.
  * @param {?string} id ID of block to find.
  */

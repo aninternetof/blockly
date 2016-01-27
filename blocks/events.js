@@ -6,5 +6,7 @@ Blockly.Blocks['pop_event_queue'] = {
     this.setColour(230);
     this.setTooltip('');
     this.setHelpUrl('http://www.example.com/');
+	//this.setMovable(false);
+	//jthis.setDeletable(false);
   }
 };
