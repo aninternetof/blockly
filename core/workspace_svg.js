@@ -443,7 +443,12 @@ Blockly.WorkspaceSvg.prototype.toggleBlock = function(id) {
   // Temporary turn off the listener for selection changes, so that we don't
   // trip the monitor for detecting user activity.
   this.traceOn(false);
-  // Select the current block.
+
+  if (block.childBlocks_.length !== 0) {
+    return 1;
+  }
+
+  // Toggle block
   if (block) {
 	if (block.svgGroup_.style.display == 'none')
 	{
@@ -456,6 +461,8 @@ Blockly.WorkspaceSvg.prototype.toggleBlock = function(id) {
   // Restore the monitor for user activity after the selection event has fired.
   var thisWorkspace = this;
   setTimeout(function() {thisWorkspace.traceOn(true);}, 1);
+
+  return 0;
 };
 
 /**
