@@ -444,10 +444,6 @@ Blockly.WorkspaceSvg.prototype.toggleBlock = function(id) {
   // trip the monitor for detecting user activity.
   this.traceOn(false);
 
-  if (block.childBlocks_.length !== 0) {
-    return 1;
-  }
-
   // Toggle block
   if (block) {
 	if (block.svgGroup_.style.display == 'none')
@@ -461,8 +457,6 @@ Blockly.WorkspaceSvg.prototype.toggleBlock = function(id) {
   // Restore the monitor for user activity after the selection event has fired.
   var thisWorkspace = this;
   setTimeout(function() {thisWorkspace.traceOn(true);}, 1);
-
-  return 0;
 };
 
 /**
