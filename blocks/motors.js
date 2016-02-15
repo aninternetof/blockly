@@ -1,20 +1,18 @@
 Blockly.Blocks['set_motor'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("Set Motor Speed");
+        .appendField("turn on")
+        .appendField(new Blockly.FieldDropdown([["left", "LEFT"], ["right", "RIGHT"]]), "MOTOR")
+        .appendField("motor, going ")
+        .appendField(new Blockly.FieldDropdown([["forward", "FORWARD"], ["backward", "BACKWARD"]]), "DIRECTION")
+        .appendField("at speed");
     this.appendValueInput("SPEED")
-        .setCheck("Number")
-        .setAlign(Blockly.ALIGN_RIGHT)
-        .appendField("Speed");
-    this.appendDummyInput()
-        .setAlign(Blockly.ALIGN_RIGHT)
-        .appendField("Direction")
-        .appendField(new Blockly.FieldDropdown([["Forward", "FORWARD"], ["Backward", "BACKWARD"]]), "DIRECTION");
+        .setCheck("Number");
     this.setInputsInline(true);
-    this.setPreviousStatement(true);
-    this.setNextStatement(true);
-    this.setColour(130);
-    this.setTooltip('');
-    this.setHelpUrl('http://www.example.com/');
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(42);
+    this.setTooltip('Set the speed and direction of a motor');
+    this.setHelpUrl('http://www.rovercode.org/ref/set_motor');
   }
 };
