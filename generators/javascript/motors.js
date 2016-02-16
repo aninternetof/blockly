@@ -6,3 +6,9 @@ Blockly.JavaScript['set_motor'] = function(block) {
   var code = "setMotor('"+dropdown_motor+"', '"+dropdown_direction+"', '"+value_speed+"')";
   return code;
 };
+
+Blockly.JavaScript['stop_motor'] = function(block) {
+  var dropdown_motor = block.getFieldValue('MOTOR');
+  var code = "stopMotor('" + dropdown_motor + "')";
+  return code;
+};

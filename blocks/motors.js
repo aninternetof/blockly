@@ -16,3 +16,18 @@ Blockly.Blocks['set_motor'] = {
     this.setHelpUrl('http://www.rovercode.org/ref/set_motor');
   }
 };
+
+Blockly.Blocks['stop_motor'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("stop")
+        .appendField(new Blockly.FieldDropdown([["left", "LEFT"], ["right", "RIGHT"]]), "MOTOR")
+        .appendField("motor");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(42);
+    this.setTooltip('');
+    this.setHelpUrl('http://www.example.com/');
+  }
+};
