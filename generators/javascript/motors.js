@@ -39,6 +39,6 @@ Blockly.JavaScript['motors_start'] = function(block) {
 
 Blockly.JavaScript['motors_stop'] = function(block) {
   var dropdown_motor = block.getFieldValue('MOTOR');
-  var code = "stopMotor('"+dropdown_motor+"'')";
+  var code = "stopMotor('"+dropdown_motor+"')";
   return code;
 };
