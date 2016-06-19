@@ -33,12 +33,12 @@ Blockly.JavaScript['motors_start'] = function(block) {
   var dropdown_motor = block.getFieldValue('MOTOR');
   var dropdown_direction = block.getFieldValue('DIRECTION');
   var value_speed = Blockly.JavaScript.valueToCode(block, 'SPEED', Blockly.JavaScript.ORDER_ATOMIC);
-  var code = "setMotor('"+dropdown_motor+"', '"+dropdown_direction+"', '"+value_speed+"')";
+  var code = "setMotor('"+dropdown_motor+"', '"+dropdown_direction+"', '"+value_speed+"');";
   return code;
 };
 
 Blockly.JavaScript['motors_stop'] = function(block) {
   var dropdown_motor = block.getFieldValue('MOTOR');
-  var code = "stopMotor('"+dropdown_motor+"')";
+  var code = "stopMotor('"+dropdown_motor+"');";
   return code;
 };
