@@ -38,7 +38,7 @@ Blockly.Blocks.sensors.HUE = 160;
 Blockly.Blocks['sensors_get_covered'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField(new Blockly.FieldDropdown([["left", "SENSORS_left"], ["right", "SENSORS_right"]]), "SENSORS");
+        .appendField(new Blockly.FieldDropdown([["left", "SENSORS_leftIr"], ["right", "SENSORS_rightIr"]]), "SENSORS");
     this.appendDummyInput()
         .appendField(" sensor is covered");
     this.setInputsInline(true);
