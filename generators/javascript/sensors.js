@@ -31,6 +31,6 @@ goog.require('Blockly.JavaScript');
 
 Blockly.JavaScript['sensors_get_covered'] = function(block) {
   var dropdown_sensors = block.getFieldValue('SENSORS');
-  var code = "getSensorCovered('"+dropdown_sensors+"');";
-  return code;
+  var code = "getSensorCovered('"+dropdown_sensors+"')";
+  return [code, Blockly.JavaScript.ORDER_NONE];
 };
